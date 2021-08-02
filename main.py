@@ -19,6 +19,7 @@ api = Api(app)
 CORS(app)
 
 #hola sigala como esta el viejon?
+#Al chingaso Bro y tu??
 @app.route('/school1/all/')
 def get_all_school_utch():
     response = list(database.db.Recycling.find({'school': {"$eq":"1"}}, {"_id":1}))
