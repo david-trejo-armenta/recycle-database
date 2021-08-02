@@ -19,7 +19,7 @@ api = Api(app)
 CORS(app)
 
 
-@app.route('/all/school/')
+@app.route('/school1/all/')
 def get_all_school_utch():
     response = list(database.db.Recycling.find({'school': {"$eq":"1"}}, {"_id":1}))
 
@@ -28,7 +28,7 @@ def get_all_school_utch():
 
     return jsonify(response)
     
-@app.route('/all/school/')
+@app.route('/school2/all/')
 def get_all_school_uach():
     response = list(database.db.Recycling.find({'school': {"$eq":"2"}}, {"_id":1}))
 
@@ -37,7 +37,7 @@ def get_all_school_uach():
 
     return jsonify(response)
 
-@app.route('/all/school/')
+@app.route('/school3/all/')
 def get_all_school_itch():
     response = list(database.db.Recycling.find({'school': {"$eq":"3"}}, {"_id":1}))
 
@@ -46,7 +46,7 @@ def get_all_school_itch():
 
     return jsonify(response)
 
-@app.route('/all/grade/')
+@app.route('/grade/all/')
 def get_all_grade():
     response = list(database.db.Recycling.find({'grade': {"$eq":"5"}}, {"_id":1}))
 
@@ -55,7 +55,7 @@ def get_all_grade():
 
     return jsonify(response)
 
-@app.route('/all/career/')
+@app.route('/career/all/')
 def get_all_career():
     response = list(database.db.Recycling.find({'carrer': {"$eq":"2"}}, {"_id":1}))
 
@@ -65,7 +65,7 @@ def get_all_career():
     return jsonify(response)
 
 
-@app.route('/all/transactions/')
+@app.route('/transactions/all/')
 def get_all_user_transactions():
     response = list(database.db.Badges.find({}))
 
@@ -74,7 +74,7 @@ def get_all_user_transactions():
 
     return jsonify(response)
 
-@app.route('/all/')
+@app.route('/users/all/')
 def get_all_user_information():
     response = list(database.db.Badges.find({}))
 
