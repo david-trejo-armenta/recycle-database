@@ -13,75 +13,13 @@ from res.career import Career
 from res.transactions import Transaction
 
 
-
 app = Flask(__name__)
 api = Api(app)
 CORS(app)
 
+
 #hola sigala como esta el viejon?
 #Al chingaso Bro y tu??
-@app.route('/bis/all/')
-def get_all_school_utch_bis():
-    response = list(database.db.profile.find({'school': {"$eq":"0"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-    
-@app.route('/utch/all/')
-def get_all_school_utch():
-    response = list(database.db.profile.find({'school': {"$eq":"1"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/tsu/all/')
-def get_all_tsu():
-    response = list(database.db.profile.find({'grade': {"$eq":"0"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/ingenieria/all/')
-def get_all_ing():
-    response = list(database.db.profile.find({'grade': {"$eq":"1"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/graduado/all/')
-def get_all_grad():
-    response = list(database.db.profile.find({'grade': {"$eq":"2"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/tics/all/')
-def get_all_tic():
-    response = list(database.db.profile.find({'carrer': {"$eq":"0"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/dn/all/')
-def get_all_dn():
-    response = list(database.db.profile.find({'carrer': {"$eq":"1"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
 
 
 @app.route('/transactions/all/')
