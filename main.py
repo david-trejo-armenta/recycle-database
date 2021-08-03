@@ -21,6 +21,24 @@ CORS(app)
 #hola sigala como esta el viejon?
 #Al chingaso Bro y tu??
 
+@app.route('/bis/all/')
+def get_all_school_utch_bis():
+    response = list(database.db.profile.find({'school': {"$eq":"0"}}, {"_id":1}))
+
+    for document in response:
+        document["_id"] = str(document['_id'])
+
+    return jsonify(response)
+    
+@app.route('/utch/all/')
+def get_all_school_utch():
+    response = list(database.db.profile.find({'school': {"$eq":"1"}}, {"_id":1}))
+
+    for document in response:
+        document["_id"] = str(document['_id'])
+
+    return jsonify(response)
+
 @app.route('/tics/all/')
 def get_all_tic():
     response = list(database.db.profile.find({'carrer': {"$eq":"0"}}, {"_id":1}))
