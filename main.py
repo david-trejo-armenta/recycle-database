@@ -20,27 +20,18 @@ CORS(app)
 
 #hola sigala como esta el viejon?
 #Al chingaso Bro y tu??
-@app.route('/school1/all/')
-def get_all_school_utch():
-    response = list(database.db.Recycling.find({'school': {"$eq":"1"}}, {"_id":1}))
+@app.route('/bis/all/')
+def get_all_school_utch_bis():
+    response = list(database.db.Recycling.find({'school': {"$eq":"0"}}, {"_id":1}))
 
     for document in response:
         document["_id"] = str(document['_id'])
 
     return jsonify(response)
     
-@app.route('/school2/all/')
-def get_all_school_uach():
-    response = list(database.db.Recycling.find({'school': {"$eq":"2"}}, {"_id":1}))
-
-    for document in response:
-        document["_id"] = str(document['_id'])
-
-    return jsonify(response)
-
-@app.route('/school3/all/')
-def get_all_school_itch():
-    response = list(database.db.Recycling.find({'school': {"$eq":"3"}}, {"_id":1}))
+@app.route('/utch/all/')
+def get_all_school_utch():
+    response = list(database.db.Recycling.find({'school': {"$eq":"1"}}, {"_id":1}))
 
     for document in response:
         document["_id"] = str(document['_id'])
@@ -56,9 +47,18 @@ def get_all_grade():
 
     return jsonify(response)
 
-@app.route('/career/all/')
-def get_all_career():
-    response = list(database.db.Recycling.find({'carrer': {"$eq":"2"}}, {"_id":1}))
+@app.route('/tic/all/')
+def get_all_tic():
+    response = list(database.db.Recycling.find({'carrer': {"$eq":"0"}}, {"_id":1}))
+
+    for document in response:
+        document["_id"] = str(document['_id'])
+
+    return jsonify(response)
+
+@app.route('/dn/all/')
+def get_all_dn():
+    response = list(database.db.Recycling.find({'carrer': {"$eq":"1"}}, {"_id":1}))
 
     for document in response:
         document["_id"] = str(document['_id'])

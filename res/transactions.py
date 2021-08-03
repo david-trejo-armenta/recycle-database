@@ -18,6 +18,7 @@ class Transaction(Resource):
                 "glass": request.json["glass"],
                 "aluminum": request.json["aluminum"],
                 "username": request.json["username"],
+                "machine": request.json["machine"]
         }).inserted_id)
 
         return jsonify({"_id": _id})
