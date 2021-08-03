@@ -21,6 +21,24 @@ CORS(app)
 #hola sigala como esta el viejon?
 #Al chingaso Bro y tu??
 
+@app.route('/tics/all/')
+def get_all_tic():
+    response = list(database.db.profile.find({'carrer': {"$eq":"0"}}, {"_id":1}))
+
+    for document in response:
+        document["_id"] = str(document['_id'])
+
+    return jsonify(response)
+
+@app.route('/dn/all/')
+def get_all_dn():
+    response = list(database.db.profile.find({'carrer': {"$eq":"1"}}, {"_id":1}))
+
+    for document in response:
+        document["_id"] = str(document['_id'])
+
+    return jsonify(response)
+
 
 @app.route('/transactions/all/')
 def get_all_user_transactions():
